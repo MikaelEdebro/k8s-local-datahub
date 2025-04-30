@@ -29,4 +29,8 @@ k9s:
 	k9s
 
 port-forward:
-	kubectl port-forward svc/datahub-datahub-frontend 9002:9002
+	(trap exit INT; \
+		kubectl port-forward svc/datahub-datahub-frontend 9002:9002 & \
+		kubectl port-forward svc/elasticsearch-master 9200:9200 \
+		&wait)
+	

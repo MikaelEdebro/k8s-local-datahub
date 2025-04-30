@@ -11,6 +11,7 @@ Make sure you have these tools installed:
 - Kind
 - Helm
 - kubectl
+- kubectx
 - make
 - k9s (optional)
 
@@ -19,3 +20,8 @@ Make sure you have these tools installed:
 Make sure you have postgres running locally. I'm using Docker to spin it up.
 
 Then just run `make cluster`.
+It will take a while to get all resources up and running.
+
+## Port forward
+
+Run `make port-forward` to access the frontend UI. It will be available on http://localhost:9002 (username/password: datahub)
